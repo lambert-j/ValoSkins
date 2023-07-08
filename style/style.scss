@@ -1,0 +1,90 @@
+@font-face {
+  font-family: "ValorantFont";
+  src: url("./ValorantFont.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: "ValorantFont";
+  overflow-x: hidden;
+  .nav {
+    font-size: 10rem;
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+    text-align: center;
+    color: whitesmoke;
+  }
+  video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+  }
+  .container {
+    margin-left: 10vw;
+    margin-right: 10vw;
+
+    .sectionArme {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+
+      .card-main {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        :hover.card-img {
+          transform: scale(1.2);
+          z-index: 2;
+        }
+        .card-title {
+          text-align: center;
+          color: whitesmoke;
+          font-size: 2rem;
+          margin-top: 15px;
+          margin-bottom: 20px;
+        }
+        .card-img {
+          height: 150px;
+          background-image: url(/asset/img/odin.png);
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          border: none;
+          transition: all 400ms;
+        }
+        .card-links {
+          margin-bottom: 15px;
+          display: flex;
+          justify-content: space-around;
+          font-size: 1.5rem;
+          color: whitesmoke;
+          z-index: 3;
+          :hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+          .card-link {
+          }
+        }
+      }
+    }
+  }
+  footer {
+    height: 200px;
+  }
+}
