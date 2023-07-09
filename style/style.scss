@@ -49,6 +49,7 @@ body {
     font-size: 2rem;
     @include colorShadow;
     font-size: 1.8rem;
+    gap: 15px;
     :hover {
       cursor: pointer;
       text-decoration: underline;
@@ -119,10 +120,64 @@ body {
             cursor: pointer;
             text-decoration: underline;
           }
-          .card-link {
-          }
         }
         .chroma {
+          @include colorShadow;
+          margin-bottom: 15px;
+          margin-top: 15px;
+        }
+      }
+
+      .card-main-chroma {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 60vw;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        :hover.card-img-chroma {
+          transform: scale(1.2);
+          z-index: 2;
+        }
+        @media (max-width: 600px) {
+          width: 80vw;
+        }
+        .card-title-chroma {
+          @include colorShadow;
+          font-size: 1.8rem;
+          margin-top: 15px;
+          margin-bottom: 20px;
+          @media (max-width: 600px) {
+            font-size: 1.6rem;
+          }
+        }
+        .card-img-chroma {
+          height: 30vh;
+          background-image: url(/asset/img/odin.png);
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          border: none;
+          transition: all 400ms;
+        }
+        .card-links-chroma {
+          margin-bottom: 15px;
+          display: flex;
+          justify-content: space-around;
+          font-size: 1.5rem;
+          @include colorShadow;
+          z-index: 3;
+          :hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+        .chroma-chroma {
           @include colorShadow;
           margin-bottom: 15px;
           margin-top: 15px;

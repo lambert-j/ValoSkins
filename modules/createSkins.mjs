@@ -1,6 +1,9 @@
+import { createChromas } from "./createChromas.mjs";
+
 let urlSkins = "https://valorant-api.com/v1/weapons/";
 const container = document.querySelector(".container");
 
+// Vas chercher les données des armes + id skins
 function getDataFromValSkins(id) {
   return new Promise((resolve, reject) => {
     fetch(urlSkins + id)
@@ -25,6 +28,7 @@ export function createSkins(id) {
       for (let index = 0; index < data.data.skins.length; index++) {
         const element = data.data.skins[index];
 
+        // Vérifie s'il y a une image ICON de disponible sinon ne génère pas la card
         if (element.displayIcon === null) {
           console.log(element.displayName + " n'existe pas");
         } else {
@@ -38,6 +42,10 @@ export function createSkins(id) {
           let divImg = document.createElement("div");
           divImg.classList.add("card-img");
           divImg.style.backgroundImage = "url(" + element.displayIcon + ")";
+          divImg.id = element.uuid;
+          divImg.onclick = function () {
+            createChromas(this.id);
+          };
 
           let divChroma = document.createElement("div");
           divChroma.classList.add("chroma");
@@ -52,6 +60,6 @@ export function createSkins(id) {
       }
     })
     .catch((error) => {
-      console.log("GetDataFromVal est cassé");
+      console.log("createSkins est cassé");
     });
 }

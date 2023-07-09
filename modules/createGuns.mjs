@@ -2,6 +2,7 @@ import { createSkins } from "./createSkins.mjs";
 const container = document.querySelector(".container");
 let urlWeapon = "https://valorant-api.com/v1/weapons";
 
+// Vas chercher les données des armes
 function getDataFromVal() {
   return new Promise((resolve, reject) => {
     fetch(urlWeapon)
@@ -15,6 +16,7 @@ function getDataFromVal() {
   });
 }
 
+// Utilise les données pour créer les cards armes et attache lien des skins
 export function createGun() {
   getDataFromVal()
     .then((data) => {
