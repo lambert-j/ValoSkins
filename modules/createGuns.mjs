@@ -36,13 +36,14 @@ export function createGun() {
         let divImg = document.createElement("div");
         divImg.classList.add("card-img");
         divImg.style.backgroundImage = "url(" + element.displayIcon + ")";
+        divImg.style.cursor = "pointer";
+        divImg.id = element.uuid;
+        divImg.onclick = function () {
+          createSkins(this.id);
+        };
 
         let divLinks = document.createElement("div");
         divLinks.classList.add("card-links");
-
-        let divLink1 = document.createElement("div");
-        divLink1.classList.add("card-link");
-        divLink1.textContent = "Stats";
 
         let divLink2 = document.createElement("div");
         divLink2.classList.add("card-link");
@@ -52,7 +53,6 @@ export function createGun() {
           createSkins(this.id);
         };
 
-        divLinks.appendChild(divLink1);
         divLinks.appendChild(divLink2);
         divCardMain.appendChild(divTitle);
         divCardMain.appendChild(divImg);
