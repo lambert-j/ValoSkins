@@ -21,7 +21,7 @@ Utilise l'API de https://dash.valorant-api.com/
 
 ## Screenshots
 
-![App Screenshot](https://imgur.com/a/nTZqWDR)
+![App Screenshot](./asset/img/MainImg.PNG)
 
 
 ## 🔗 Links
