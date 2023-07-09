@@ -1,8 +1,19 @@
-import { GetDataFromVal } from "./modules/fetch.mjs";
+import { getDataFromVal } from "./modules/fetch.mjs";
+import { smoothScroll } from "./modules/scrolling.mjs";
+//VARIABLES
 
 const section = document.querySelector(".sectionArme");
-GetDataFromVal()
+const sectionSkins = document.querySelector(".sectionSkins");
+let urlSkins = "https://valorant-api.com/v1/weapons/";
+
+//EVENEMENT
+
+//FONCTION CREER MENU PRINCIPAL
+
+getDataFromVal()
   .then((data) => {
+    section.innerHTML = "";
+    sectionSkins.innerHTML = "";
     for (let index = 0; index < data.data.length; index++) {
       const element = data.data[index];
 
@@ -27,6 +38,10 @@ GetDataFromVal()
       let divLink2 = document.createElement("div");
       divLink2.classList.add("card-link");
       divLink2.textContent = "Skins";
+      divLink2.id = element.uuid;
+      divLink2.onclick = function () {
+        getDataFromValSkins(this.id);
+      };
 
       divLinks.appendChild(divLink1);
       divLinks.appendChild(divLink2);
@@ -34,43 +49,62 @@ GetDataFromVal()
       divSection.appendChild(divImg);
       divSection.appendChild(divLinks);
       section.appendChild(divSection);
-
-      // var card = document.createElement("div");
-      // card.classList.add("card");
-      // card.style.width = "18rem";
-
-      // var image = document.createElement("img");
-      // image.classList.add("card-img-top");
-      // image.classList.add("boximg");
-      // image.style.backgroundImage = "url(" + element.displayIcon + ")";
-
-      // var cardBody = document.createElement("div");
-      // cardBody.classList.add("card-body");
-
-      // var cardTitle = document.createElement("h5");
-      // cardTitle.classList.add("card-title");
-      // cardTitle.textContent = "" + element.displayName;
-
-      // var cardLink1 = document.createElement("a");
-      // cardLink1.classList.add("card-link");
-      // cardLink1.href = "#";
-      // cardLink1.textContent = "Stats";
-
-      // var cardLink2 = document.createElement("a");
-      // cardLink2.classList.add("card-link");
-      // cardLink2.href = "#";
-      // cardLink2.textContent = "Skins";
-
-      // cardBody.appendChild(cardTitle);
-      // cardBody.appendChild(cardLink1);
-      // cardBody.appendChild(cardLink2);
-
-      // card.appendChild(image);
-      // card.appendChild(cardBody);
-
-      // section.appendChild(card);
     }
   })
   .catch((error) => {
     console.log("GetDataFromVal est cassé");
   });
+
+// FONCTION CREER MENU SKINS AU CLICK SUR ARME
+
+function getDataFromValSkins(id) {
+  return new Promise((resolve, reject) => {
+    fetch(urlSkins + id)
+      .then((response) => response.json())
+      .then((data) => {
+        section.innerHTML = "";
+        sectionSkins.innerHTML = "";
+
+        for (let index = 0; index < data.data.skins.length; index++) {
+          const element = data.data.skins[index];
+
+          if (element.displayIcon === null) {
+            console.log(element.displayName + " n'existe pas");
+          } else {
+            let divSection = document.createElement("div");
+            divSection.classList.add("card-main");
+
+            let divTitle = document.createElement("div");
+            divTitle.classList.add("card-title");
+            divTitle.textContent = "" + element.displayName;
+
+            let divImg = document.createElement("div");
+            divImg.classList.add("card-img");
+            divImg.style.backgroundImage = "url(" + element.displayIcon + ")";
+
+            let divChroma = document.createElement("div");
+            divChroma.classList.add("chroma");
+            divChroma.textContent = "Colors : " + element.chromas.length;
+
+            divSection.appendChild(divTitle);
+            divSection.appendChild(divImg);
+            divSection.appendChild(divChroma);
+            section.appendChild(divSection);
+          }
+        }
+
+        resolve(data.data.skins);
+        console.log(data.data.skins);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+function reload() {
+  location.reload();
+}
+document.querySelector(".nav").addEventListener("click", reload);
+
+smoothScroll();

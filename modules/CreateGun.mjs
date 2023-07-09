@@ -1,1 +1,1 @@
-export function createGunCard() {}
+export function createGunCard(data) {}
