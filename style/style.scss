@@ -171,6 +171,46 @@ body {
           margin-top: 15px;
         }
       }
+
+      .card-main-map {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 30vw;
+        height: 38vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        :hover.card-img-map {
+          transform: scale(1.2);
+          z-index: 2;
+        }
+        @media (max-width: 600px) {
+          width: 80vw;
+        }
+        .card-title-map {
+          @include colorShadow;
+          font-size: 1.8rem;
+          margin-top: 15px;
+          margin-bottom: 20px;
+          @media (max-width: 600px) {
+            font-size: 1.6rem;
+          }
+        }
+        .card-img-map {
+          height: 38vh;
+          background-image: url(/asset/img/odin.png);
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          border: none;
+          transition: all 400ms;
+          margin-bottom: 20px;
+        }
+      }
     }
   }
   .retour {

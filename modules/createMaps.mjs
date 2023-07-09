@@ -16,7 +16,40 @@ function getDataFromValMaps() {
 }
 
 export function createMaps() {
-  getDataFromValMaps().then((data) => {
-    console.log(data);
-  });
+  getDataFromValMaps()
+    .then((data) => {
+      container.innerHTML = "";
+      let section = document.createElement("section");
+      section.classList.add("section");
+
+      for (let index = 0; index < data.data.length; index++) {
+        const element = data.data[index];
+
+        let divCardMain = document.createElement("div");
+        divCardMain.classList.add("card-main-map");
+
+        let divTitle = document.createElement("div");
+        divTitle.classList.add("card-title-map");
+        divTitle.textContent = "" + element.displayName;
+
+        let divImg = document.createElement("div");
+        divImg.classList.add("card-img-map");
+        divImg.style.backgroundImage = "url(" + element.splash + ")";
+        divImg.style.cursor = "pointer";
+        divImg.id = element.uuid;
+        // divImg.onclick = function () {
+        //   createSkins(this.id);
+        // };
+
+        divCardMain.appendChild(divTitle);
+        divCardMain.appendChild(divImg);
+        section.appendChild(divCardMain);
+      }
+
+      container.appendChild(section);
+    })
+
+    .catch((error) => {
+      console.log("GetDataFromVal est cassé");
+    });
 }
