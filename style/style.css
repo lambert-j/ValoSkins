@@ -21,26 +21,44 @@ body video {
   position: fixed;
   z-index: -1;
 }
-body .nav {
+body .mainTitle {
   font-size: 10vw;
   padding-top: 5vh;
   margin-bottom: 10vh;
-  text-align: center;
   color: whitesmoke;
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
   cursor: pointer;
+}
+body .navbar {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 2rem;
+  color: whitesmoke;
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
+  font-size: 1.8rem;
+}
+body .navbar :hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 body .container {
   margin-left: 10vw;
   margin-right: 10vw;
 }
-body .container .sectionArme {
+body .container .section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
-body .container .sectionArme .card-main {
+body .container .section .card-main {
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(15px);
@@ -53,19 +71,19 @@ body .container .sectionArme .card-main {
   flex-direction: column;
   justify-content: center;
 }
-body .container .sectionArme .card-main :hover.card-img {
+body .container .section .card-main :hover.card-img {
   transform: scale(1.2);
   z-index: 2;
 }
-body .container .sectionArme .card-main .card-title {
-  text-align: center;
+body .container .section .card-main .card-title {
   color: whitesmoke;
   text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
   font-size: 1.8rem;
   margin-top: 15px;
   margin-bottom: 20px;
 }
-body .container .sectionArme .card-main .card-img {
+body .container .section .card-main .card-img {
   height: 150px;
   background-image: url(/asset/img/odin.png);
   background-position: center;
@@ -74,33 +92,34 @@ body .container .sectionArme .card-main .card-img {
   border: none;
   transition: all 400ms;
 }
-body .container .sectionArme .card-main .card-links {
+body .container .section .card-main .card-links {
   margin-bottom: 15px;
   display: flex;
   justify-content: space-around;
   font-size: 1.5rem;
   color: whitesmoke;
   text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
   z-index: 3;
 }
-body .container .sectionArme .card-main .card-links :hover {
+body .container .section .card-main .card-links :hover {
   cursor: pointer;
   text-decoration: underline;
 }
-body .container .sectionArme .card-main .chroma {
-  text-align: center;
+body .container .section .card-main .chroma {
   color: whitesmoke;
   text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
   margin-bottom: 15px;
   margin-top: 15px;
 }
 body .retour {
   color: whitesmoke;
-  font-size: 2rem;
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
   text-align: center;
+  font-size: 2rem;
   display: block;
   margin-top: 30px;
-  text-shadow: 0px 0px 5px rgb(0, 0, 0);
 }
 body footer {
   height: 200px;
