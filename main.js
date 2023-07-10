@@ -3,9 +3,13 @@ import { smoothScroll } from "./modules/scrolling.mjs";
 import { createGun } from "./modules/createGuns.mjs";
 import { createMaps } from "./modules/createMaps.mjs";
 import { createBuddies } from "./modules/createBuddies.mjs";
-import { createSprays } from "./modules/createSprays.mjs";
 import { resetBuddiesVar } from "./modules/createBuddies.mjs";
+import { createSprays } from "./modules/createSprays.mjs";
 import { resetSpraysVar } from "./modules/createSprays.mjs";
+import { createCards } from "./modules/createCards.mjs";
+import { resetCardsVar } from "./modules/createCards.mjs";
+
+//
 
 function reload() {
   createGun();
@@ -32,3 +36,9 @@ document
 document
   .querySelector(".navbar-Sprays")
   .addEventListener("click", createSprays);
+
+// event reset et create CARDS(25)
+document
+  .querySelector(".navbar-Cards")
+  .addEventListener("click", resetCardsVar);
+document.querySelector(".navbar-Cards").addEventListener("click", createCards);

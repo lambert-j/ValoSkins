@@ -62,7 +62,6 @@ export function createBuddies() {
       } else {
         numberOfItemGenerated = 50;
       }
-
       container.appendChild(section);
     })
 
