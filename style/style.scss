@@ -3,6 +3,17 @@
   src: url("./ValorantFont.ttf");
 }
 
+@mixin colorgradient {
+  background: rgb(213, 99, 36);
+  background: linear-gradient(
+    150deg,
+    rgba(199, 244, 88, 1) 0%,
+    rgba(213, 99, 36, 1) 50%,
+    rgba(58, 38, 86, 1) 75%,
+    rgba(58, 114, 51, 1) 100%
+  );
+}
+
 @mixin colorShadow {
   color: whitesmoke;
   text-shadow: 0px 0px 5px rgb(0, 0, 0);
@@ -202,6 +213,43 @@ body {
         }
         .card-img-map {
           height: 38vh;
+          background-image: url(/asset/img/odin.png);
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          border: none;
+          transition: all 400ms;
+          margin-bottom: 20px;
+        }
+      }
+      .card-main-buddies {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        :hover.card-img-buddies {
+          transform: scale(1.4);
+          z-index: 2;
+        }
+
+        .card-title-buddies {
+          @include colorShadow;
+          font-size: 1rem;
+          margin-top: 15px;
+          margin-bottom: 20px;
+          @media (max-width: 600px) {
+            font-size: 1rem;
+          }
+        }
+        .card-img-buddies {
+          height: 128px;
           background-image: url(/asset/img/odin.png);
           background-position: center;
           background-size: contain;

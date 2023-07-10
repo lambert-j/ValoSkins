@@ -224,6 +224,46 @@ body .container .section .card-main-map .card-img-map {
   transition: all 400ms;
   margin-bottom: 20px;
 }
+body .container .section .card-main-buddies {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body .container .section .card-main-buddies :hover.card-img-buddies {
+  transform: scale(1.4);
+  z-index: 2;
+}
+body .container .section .card-main-buddies .card-title-buddies {
+  color: whitesmoke;
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+@media (max-width: 600px) {
+  body .container .section .card-main-buddies .card-title-buddies {
+    font-size: 1rem;
+  }
+}
+body .container .section .card-main-buddies .card-img-buddies {
+  height: 128px;
+  background-image: url(/asset/img/odin.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  transition: all 400ms;
+  margin-bottom: 20px;
+}
 body .retour {
   color: whitesmoke;
   text-shadow: 0px 0px 5px rgb(0, 0, 0);
