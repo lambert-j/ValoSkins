@@ -1,6 +1,7 @@
 //
 const container = document.querySelector(".container");
 let urlSprays = "https://valorant-api.com/v1/sprays";
+let numberOfItemGenerated = 50;
 //
 
 // Vas chercher les données des armes
@@ -24,7 +25,7 @@ export function createSprays() {
       let section = document.createElement("section");
       section.classList.add("section");
 
-      for (let index = 0; index < data.data.length; index++) {
+      for (let index = 0; index < numberOfItemGenerated; index++) {
         const element = data.data[index];
 
         let divCardMain = document.createElement("div");
@@ -48,6 +49,19 @@ export function createSprays() {
         divCardMain.appendChild(divImg);
         section.appendChild(divCardMain);
       }
+      if (numberOfItemGenerated < data.data.length - 50) {
+        let divShowMore = document.createElement("div");
+        divShowMore.classList.add("divShowMore");
+        divShowMore.textContent = "Show more";
+        divShowMore.id = numberOfItemGenerated;
+        divShowMore.onclick = function () {
+          createSprays();
+        };
+        numberOfItemGenerated = numberOfItemGenerated + 50;
+        section.appendChild(divShowMore);
+      } else {
+        numberOfItemGenerated = 50;
+      }
 
       container.appendChild(section);
     })
@@ -55,4 +69,7 @@ export function createSprays() {
     .catch((error) => {
       console.log("GetDataFromValSprays est cassé");
     });
+}
+export function resetSpraysVar() {
+  numberOfItemGenerated = 50;
 }

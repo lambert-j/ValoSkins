@@ -264,6 +264,24 @@ body .container .section .card-main-buddies .card-img-buddies {
   transition: all 400ms;
   margin-bottom: 20px;
 }
+body .container .section .divShowMore {
+  color: whitesmoke;
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
+  font-size: 1.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 body .retour {
   color: whitesmoke;
   text-shadow: 0px 0px 5px rgb(0, 0, 0);
@@ -273,5 +291,15 @@ body .retour {
   margin-top: 30px;
 }
 body footer {
-  height: 200px;
+  margin-top: 100px;
+  margin-bottom: 5px;
+  text-align: center;
+  color: whitesmoke;
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
+}
+body footer a {
+  color: whitesmoke;
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

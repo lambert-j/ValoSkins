@@ -1,6 +1,7 @@
 //
 const container = document.querySelector(".container");
 let urlBuddies = "https://valorant-api.com/v1/buddies";
+let numberOfItemGenerated = 50;
 //
 
 // Vas chercher les données des armes
@@ -24,7 +25,7 @@ export function createBuddies() {
       let section = document.createElement("section");
       section.classList.add("section");
 
-      for (let index = 0; index < data.data.length; index++) {
+      for (let index = 0; index < numberOfItemGenerated; index++) {
         const element = data.data[index];
 
         let divCardMain = document.createElement("div");
@@ -45,7 +46,21 @@ export function createBuddies() {
 
         divCardMain.appendChild(divTitle);
         divCardMain.appendChild(divImg);
+
         section.appendChild(divCardMain);
+      }
+      if (numberOfItemGenerated < data.data.length - 50) {
+        let divShowMore = document.createElement("div");
+        divShowMore.classList.add("divShowMore");
+        divShowMore.textContent = "Show more";
+        divShowMore.id = numberOfItemGenerated;
+        divShowMore.onclick = function () {
+          createBuddies();
+        };
+        numberOfItemGenerated = numberOfItemGenerated + 50;
+        section.appendChild(divShowMore);
+      } else {
+        numberOfItemGenerated = 50;
       }
 
       container.appendChild(section);
@@ -54,4 +69,9 @@ export function createBuddies() {
     .catch((error) => {
       console.log("GetDataFromValBuddies est cassé");
     });
+}
+
+// Fonction qui reset la valeur de la variable d'item generer quand on clique à nouveau sur le menu Buddies, pour que seulement 50 items soit générer après avoir déjà visiter ce menu.
+export function resetBuddiesVar() {
+  numberOfItemGenerated = 50;
 }
