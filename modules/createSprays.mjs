@@ -28,26 +28,30 @@ export function createSprays() {
       for (let index = 0; index < numberOfItemGenerated; index++) {
         const element = data.data[index];
 
-        let divCardMain = document.createElement("div");
-        divCardMain.classList.add("card-main-buddies");
+        if (element.fullTransparentIcon === null) {
+          console.log(element.displayName + "spray n'existe pas");
+        } else {
+          let divCardMain = document.createElement("div");
+          divCardMain.classList.add("card-main-buddies");
 
-        let divTitle = document.createElement("div");
-        divTitle.classList.add("card-title-buddies");
-        divTitle.textContent = "" + element.displayName;
+          let divTitle = document.createElement("div");
+          divTitle.classList.add("card-title-buddies");
+          divTitle.textContent = "" + element.displayName;
 
-        let divImg = document.createElement("div");
-        divImg.classList.add("card-img-buddies");
-        divImg.style.backgroundImage =
-          "url(" + element.fullTransparentIcon + ")";
-        divImg.style.cursor = "pointer";
-        divImg.id = element.uuid;
-        // divImg.onclick = function () {
-        //   createSkins(this.id);
-        // };
+          let divImg = document.createElement("div");
+          divImg.classList.add("card-img-buddies");
+          divImg.style.backgroundImage =
+            "url(" + element.fullTransparentIcon + ")";
+          divImg.style.cursor = "pointer";
+          divImg.id = element.uuid;
+          // divImg.onclick = function () {
+          //   createSkins(this.id);
+          // };
 
-        divCardMain.appendChild(divTitle);
-        divCardMain.appendChild(divImg);
-        section.appendChild(divCardMain);
+          divCardMain.appendChild(divTitle);
+          divCardMain.appendChild(divImg);
+          section.appendChild(divCardMain);
+        }
       }
       if (numberOfItemGenerated < data.data.length - 50) {
         let divShowMore = document.createElement("div");
