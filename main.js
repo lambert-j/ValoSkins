@@ -8,7 +8,7 @@ import { createSprays } from "./modules/createSprays.mjs";
 import { resetSpraysVar } from "./modules/createSprays.mjs";
 import { createCards } from "./modules/createCards.mjs";
 import { resetCardsVar } from "./modules/createCards.mjs";
-
+import { createAgents } from "./modules/createAgents.mjs";
 //
 
 function reload() {
@@ -18,6 +18,9 @@ smoothScroll();
 createGun();
 
 document.querySelector(".mainTitle").addEventListener("click", reload);
+document
+  .querySelector(".navbar-Agents")
+  .addEventListener("click", createAgents);
 document.querySelector(".navbar-Weapons").addEventListener("click", createGun);
 document.querySelector(".navbar-Maps").addEventListener("click", createMaps);
 

@@ -285,6 +285,43 @@ body {
           margin-bottom: 10px;
         }
       }
+      .card-main-agents {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 200px;
+        height: 440px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        :hover.card-img-agents {
+          transform: scale(1.2);
+          z-index: 2;
+        }
+
+        .card-title-agents {
+          @include colorShadow;
+          font-size: 1rem;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          @media (max-width: 600px) {
+            font-size: 1rem;
+          }
+        }
+        .card-img-agents {
+          height: 400px;
+          background-image: url(/asset/img/odin.png);
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          border: none;
+          transition: all 400ms;
+          margin-bottom: 10px;
+        }
+      }
       .divShowMore {
         @include colorShadow();
         font-size: 1.4rem;

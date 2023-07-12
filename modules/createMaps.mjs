@@ -22,6 +22,20 @@ export function createMaps() {
       let section = document.createElement("section");
       section.classList.add("section");
 
+      const array = data.data;
+
+      array.sort((a, b) => {
+        const displayNameA = a.displayName.toLowerCase();
+        const displayNameB = b.displayName.toLowerCase();
+        if (displayNameA < displayNameB) {
+          return -1;
+        } else if (displayNameA > displayNameB) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+
       for (let index = 0; index < data.data.length; index++) {
         const element = data.data[index];
 
