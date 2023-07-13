@@ -1,3 +1,5 @@
+import { createAgentMenu } from "./CreateAgentMenu.mjs";
+
 const container = document.querySelector(".container");
 let urlWeapon = "https://valorant-api.com/v1/agents";
 
@@ -54,9 +56,9 @@ export function createAgents() {
           divImg.style.backgroundImage = "url(" + element.fullPortrait + ")";
           divImg.style.cursor = "pointer";
           divImg.id = element.uuid;
-          // divImg.onclick = function () {
-          //   createSkins(this.id);
-          // };
+          divImg.onclick = function () {
+            createAgentMenu(this.id);
+          };
 
           divCardMain.appendChild(divTitle);
           divCardMain.appendChild(divImg);

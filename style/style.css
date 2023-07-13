@@ -336,7 +336,6 @@ body .container .section .card-main-agents .card-title-agents {
 }
 body .container .section .card-main-agents .card-img-agents {
   height: 400px;
-  background-image: url(/asset/img/odin.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -361,6 +360,97 @@ body .container .section .divShowMore {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+body .container .section-agent {
+  font-family: kanit;
+}
+body .container .section-agent .nav-agent {
+  color: whitesmoke;
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
+}
+body .container .section-agent .agent-div {
+  color: whitesmoke;
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+body .container .section-agent .agent-div .agent {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 350px;
+  height: 440px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  transition: all 400ms;
+}
+body .container .section-agent .agent-div .agent .agent-title {
+  font-size: 1.6rem;
+  margin-top: 10px;
+}
+body .container .section-agent .agent-div .agent .agent-image {
+  height: 450px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  transform: translateY(-30px);
+}
+body .container .section-agent .agent-div .agent-spells {
+  width: 50vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+@media (max-width: 600px) {
+  body .container .section-agent .agent-div .agent-spells {
+    width: 80vw;
+  }
+}
+body .container .section-agent .agent-div .agent-spells .spell {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 350px;
+  gap: 10px;
+}
+body .container .section-agent .agent-div .agent-spells .spell .spell-icon-title {
+  display: flex;
+  justify-content: center;
+  margin-left: 25px;
+  margin-right: 25px;
+  gap: 10px;
+  margin-top: 10px;
+}
+body .container .section-agent .agent-div .agent-spells .spell .spell-icon-title .spell-icon {
+  background-image: url(/asset/img/spellIcon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+}
+body .container .section-agent .agent-div .agent-spells .spell .spell-icon-title .spell-title {
+  font-size: 1.4rem;
+}
+body .container .section-agent .agent-div .agent-spells .spell .spell-text {
+  margin-right: 20px;
+  margin-left: 20px;
 }
 body .retour {
   color: whitesmoke;
