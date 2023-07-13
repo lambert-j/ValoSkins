@@ -11,7 +11,7 @@ Utilise l'API de https://dash.valorant-api.com/
 
 ## Features
 
-- Listes de toutes les armes, leurs stats, skins et chromas avec lien vidéo previews
+- Listes de toutes les armes, skins et chromas avec lien vidéo previews
 - Toutes les Maps
 - Les Agents et leurs Statistiques
 - Toutes les cartes de profil
