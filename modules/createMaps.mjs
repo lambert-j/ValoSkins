@@ -1,3 +1,5 @@
+import { createMapsCharts } from "./createMapsChart.mjs";
+
 const container = document.querySelector(".container");
 let urlMaps = "https://valorant-api.com/v1/maps";
 
@@ -51,9 +53,9 @@ export function createMaps() {
         divImg.style.backgroundImage = "url(" + element.splash + ")";
         divImg.style.cursor = "pointer";
         divImg.id = element.uuid;
-        // divImg.onclick = function () {
-        //   createSkins(this.id);
-        // };
+        divImg.onclick = function () {
+          createMapsCharts(this.id);
+        };
 
         divCardMain.appendChild(divTitle);
         divCardMain.appendChild(divImg);

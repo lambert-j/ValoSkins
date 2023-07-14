@@ -1,0 +1,49 @@
+const container = document.querySelector(".container");
+
+const jsonData = {
+  "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319": {
+    picture: "asset/img/ascent.webp",
+    displayName: "Ascent",
+  },
+  "d960549e-485c-e861-8d71-aa9d1aed12a2": {
+    picture: "asset/img/split.webp",
+    displayName: "Split",
+  },
+  "b529448b-4d60-346e-e89e-00a4c527a405": {
+    picture: "asset/img/fracture.webp",
+    displayName: "Fracture",
+  },
+  "2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba": {
+    picture: "asset/img/bind.webp",
+    displayName: "Bind",
+  },
+  "2fb9a4fd-47b8-4e7d-a969-74b4046ebd53": {
+    picture: "asset/img/breeze.webp",
+    displayName: "Breeze",
+  },
+  "2fe4ed3a-450a-948b-6d6b-e89a78e680a9": {
+    picture: "asset/img/lotus.webp",
+    displayName: "Lotus",
+  },
+  "fd267378-4d1d-484f-ff52-77821ed10dc2": {
+    picture: "asset/img/pearl.webp",
+    displayName: "Pearl",
+  },
+  "e2ad5c54-4114-a870-9641-8ea21279579a": {
+    picture: "asset/img/icebox.webp",
+    displayName: "Icebox",
+  },
+  "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047": {
+    picture: "asset/img/haven.webp",
+    displayName: "Haven",
+  },
+};
+
+export function createMapsCharts(buttonId) {
+  const buttonData = jsonData[buttonId];
+  if (buttonData) {
+    container.innerHTML = "";
+    const div = document.getElementById("maDiv");
+    container.style.backgroundImage = `url(${buttonData.picture})`;
+  }
+}
