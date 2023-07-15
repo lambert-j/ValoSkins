@@ -363,13 +363,30 @@ body {
                 .text-text-color {
                   height: 20px;
                   width: 20px;
-                  background-color: #649a8c;
+
                   //Couleurs des box :
                   // 1:#649a8c
                   // 2:#9E7274
                   // 3:#BC8D7C
                   // 4:#16E5B4
                   // 5:#FF4655
+                }
+                .tcolor1 {
+                  background-color: #649a8c;
+                }
+                .tcolor2 {
+                  background-color: #9e7274;
+                }
+                .tcolor3 {
+                  background-color: #bc8d7c;
+                }
+                .tcolor4 {
+                  height: 5px;
+                  background-color: #16e5b4;
+                }
+                .tcolor5 {
+                  height: 5px;
+                  background-color: #ff4655;
                 }
                 .text-text {
                 }

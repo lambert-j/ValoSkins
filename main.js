@@ -15,7 +15,7 @@ function reload() {
   createGun();
 }
 smoothScroll();
-createGun();
+// createGun();
 
 document.querySelector(".mainTitle").addEventListener("click", reload);
 document
