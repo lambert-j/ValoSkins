@@ -343,6 +343,52 @@ body .container .section .card-main-agents .card-img-agents {
   transition: all 400ms;
   margin-bottom: 10px;
 }
+body .container .section .map-name-gigabox {
+  color: whitesmoke;
+  text-shadow: 0px 0px 5px rgb(0, 0, 0);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: kanit;
+}
+body .container .section .map-name-gigabox .map-name {
+  font-size: 1.6rem;
+}
+body .container .section .map-name-gigabox .map-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: start;
+  font-size: 1.2rem;
+}
+body .container .section .map-name-gigabox .map-legend .map-legend-box {
+  border-left: 1px solid whitesmoke;
+  padding-left: 10px;
+}
+body .container .section .map-name-gigabox .map-legend .map-legend-box .map-legend-text-box {
+  font-size: 0.8rem;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+body .container .section .map-name-gigabox .map-legend .map-legend-box .map-legend-text-box .text-box {
+  display: flex;
+  gap: 10px;
+}
+body .container .section .map-name-gigabox .map-legend .map-legend-box .map-legend-text-box .text-box .text-text-color {
+  height: 20px;
+  width: 20px;
+  background-color: #649a8c;
+}
+body .container .section .map-picture {
+  width: 60vw;
+}
+@media (max-width: 600px) {
+  body .container .section .map-picture {
+    width: 80vw;
+  }
+}
 body .container .section .divShowMore {
   color: whitesmoke;
   text-shadow: 0px 0px 5px rgb(0, 0, 0);

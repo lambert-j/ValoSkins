@@ -330,6 +330,61 @@ body {
           margin-bottom: 10px;
         }
       }
+      .map-name-gigabox {
+        @include colorShadow();
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        font-family: kanit;
+
+        .map-name {
+          font-size: 1.6rem;
+        }
+        .map-legend {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          text-align: start;
+          font-size: 1.2rem;
+          .map-legend-text {
+          }
+          .map-legend-box {
+            border-left: 1px solid whitesmoke;
+            padding-left: 10px;
+
+            .map-legend-text-box {
+              font-size: 0.8rem;
+              display: flex;
+              gap: 10px;
+              flex-direction: column;
+              .text-box {
+                display: flex;
+                gap: 10px;
+                .text-text-color {
+                  height: 20px;
+                  width: 20px;
+                  background-color: #649a8c;
+                  //Couleurs des box :
+                  // 1:#649a8c
+                  // 2:#9E7274
+                  // 3:#BC8D7C
+                  // 4:#16E5B4
+                  // 5:#FF4655
+                }
+                .text-text {
+                }
+              }
+            }
+          }
+        }
+      }
+      .map-picture {
+        // height: 50vh;
+        width: 60vw;
+        @media (max-width: 600px) {
+          width: 80vw;
+        }
+      }
       .divShowMore {
         @include colorShadow();
         font-size: 1.4rem;
