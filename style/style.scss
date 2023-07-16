@@ -330,6 +330,31 @@ body {
           margin-bottom: 10px;
         }
       }
+
+      .divShowMore {
+        @include colorShadow();
+        font-size: 1.4rem;
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+
+    .section-map {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+
       .map-name-gigabox {
         @include colorShadow();
         display: flex;
@@ -397,29 +422,12 @@ body {
       }
       .map-picture {
         // height: 50vh;
-        width: 60vw;
+        width: 50vw;
         @media (max-width: 600px) {
-          width: 80vw;
+          width: 90vw;
         }
       }
-      .divShowMore {
-        @include colorShadow();
-        font-size: 1.4rem;
-        background: rgba(255, 255, 255, 0.05);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        width: 200px;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-      }
     }
-
     .section-agent {
       font-family: kanit;
       .nav-agent {

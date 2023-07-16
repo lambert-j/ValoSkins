@@ -43,7 +43,66 @@ export function createMapsCharts(buttonId) {
   const buttonData = jsonData[buttonId];
   if (buttonData) {
     container.innerHTML = "";
-    const div = document.getElementById("maDiv");
-    container.style.backgroundImage = `url(${buttonData.picture})`;
+
+    const sectionMap = document.createElement("div");
+    sectionMap.classList.add("section-map");
+
+    const mapNameGigabox = document.createElement("div");
+    mapNameGigabox.classList.add("map-name-gigabox");
+
+    const mapName = document.createElement("div");
+    mapName.classList.add("map-name");
+    mapName.textContent = buttonData.displayName;
+
+    const mapLegend = document.createElement("div");
+    mapLegend.classList.add("map-legend");
+
+    const mapLegendText = document.createElement("div");
+    mapLegendText.classList.add("map-legend-text");
+    mapLegendText.textContent = "Legend";
+
+    const mapLegendBox = document.createElement("div");
+    mapLegendBox.classList.add("map-legend-box");
+
+    const mapLegendTextBox = document.createElement("div");
+    mapLegendTextBox.classList.add("map-legend-text-box");
+
+    const textBoxes = [
+      { color: "tcolor1", text: "Defenders Buy Zone" },
+      { color: "tcolor2", text: "Attackers Buy Zone" },
+      { color: "tcolor3", text: "Spike Plant Zone" },
+      { color: "tcolor4", text: "Defenders Spawn Barrier" },
+      { color: "tcolor5", text: "Attackers Spawn Barrier" },
+    ];
+
+    textBoxes.forEach((item) => {
+      const textBox = document.createElement("div");
+      textBox.classList.add("text-box");
+
+      const textColor = document.createElement("div");
+      textColor.classList.add("text-text-color", item.color);
+
+      const textText = document.createElement("div");
+      textText.classList.add("text-text");
+      textText.textContent = item.text;
+
+      textBox.appendChild(textColor);
+      textBox.appendChild(textText);
+      mapLegendTextBox.appendChild(textBox);
+    });
+
+    mapLegendBox.appendChild(mapLegendTextBox);
+    mapLegend.appendChild(mapLegendText);
+    mapLegend.appendChild(mapLegendBox);
+
+    const mapPicture = document.createElement("img");
+    mapPicture.src = buttonData.picture;
+    mapPicture.classList.add("map-picture");
+
+    sectionMap.appendChild(mapNameGigabox);
+    mapNameGigabox.appendChild(mapName);
+    mapNameGigabox.appendChild(mapLegend);
+    sectionMap.appendChild(mapPicture);
+    container.appendChild(sectionMap);
   }
 }

@@ -24,8 +24,19 @@ export function createMaps() {
       let section = document.createElement("section");
       section.classList.add("section");
 
-      const array = data.data;
+      const noFilterArray = data.data;
 
+      const array = noFilterArray.filter((item) => {
+        const displayName = item.displayName;
+        return (
+          displayName !== "District" &&
+          displayName !== "Kasbah" &&
+          displayName !== "Piazza" &&
+          displayName !== "The Range"
+        );
+      });
+
+      console.log(array);
       array.sort((a, b) => {
         const displayNameA = a.displayName.toLowerCase();
         const displayNameB = b.displayName.toLowerCase();
@@ -38,8 +49,8 @@ export function createMaps() {
         }
       });
 
-      for (let index = 0; index < data.data.length; index++) {
-        const element = data.data[index];
+      for (let index = 0; index < array.length; index++) {
+        const element = array[index];
 
         let divCardMain = document.createElement("div");
         divCardMain.classList.add("card-main-map");
