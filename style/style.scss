@@ -371,8 +371,7 @@ body {
           gap: 10px;
           text-align: start;
           font-size: 1.2rem;
-          .map-legend-text {
-          }
+
           .map-legend-box {
             border-left: 1px solid whitesmoke;
             padding-left: 10px;
@@ -413,15 +412,12 @@ body {
                   height: 5px;
                   background-color: #ff4655;
                 }
-                .text-text {
-                }
               }
             }
           }
         }
       }
       .map-picture {
-        // height: 50vh;
         width: 50vw;
         @media (max-width: 600px) {
           width: 90vw;
